@@ -1,4 +1,5 @@
 const YOUTUBE_UPLOADS_PLAYLIST = 'UUp7qbXcpUKDnva08u_ELOjw'
+const FACEBOOK_PAGE_URL = 'https://www.facebook.com/lablabdog'
 
 function FeedHeader({ platform, handle, href }: { platform: string; handle: string; href: string }) {
   return (
@@ -24,8 +25,8 @@ export function SocialFeeds() {
         <h2 id="feeds-heading" className="font-serif text-3xl font-semibold tracking-tight md:text-4xl">
           Latest from Lablab
         </h2>
-        <div className="mt-12 grid gap-10 lg:grid-cols-5">
-          <div className="flex flex-col gap-4 lg:col-span-3">
+        <div className="mt-12 grid gap-10 lg:grid-cols-2">
+          <div className="flex flex-col gap-4 lg:col-span-2">
             <FeedHeader platform="YouTube" handle="@lablabdog" href="https://youtube.com/@lablabdog" />
             <div className="aspect-video overflow-hidden rounded-xl bg-muted">
               <iframe
@@ -38,14 +39,26 @@ export function SocialFeeds() {
               />
             </div>
           </div>
-          <div className="flex flex-col gap-4 lg:col-span-2">
+          <div className="flex flex-col gap-4">
             <FeedHeader platform="Instagram" handle="@lablabdog" href="https://instagram.com/lablabdog" />
-            <div className="h-[440px] overflow-hidden rounded-xl bg-background">
+            <div className="h-[500px] overflow-hidden rounded-xl bg-white">
               <iframe
                 src="https://www.instagram.com/lablabdog/embed"
                 title="Lablab's Instagram feed"
                 loading="lazy"
                 className="size-full"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col gap-4">
+            <FeedHeader platform="Facebook" handle="facebook.com/lablabdog" href={FACEBOOK_PAGE_URL} />
+            <div className="flex h-[500px] justify-center overflow-hidden rounded-xl bg-white">
+              <iframe
+                src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(FACEBOOK_PAGE_URL)}&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`}
+                title="Lablab's Facebook page"
+                loading="lazy"
+                allow="encrypted-media; clipboard-write; picture-in-picture; web-share"
+                className="h-full w-full max-w-[500px]"
               />
             </div>
           </div>
