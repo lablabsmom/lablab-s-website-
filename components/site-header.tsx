@@ -1,6 +1,7 @@
 const navItems = [
   { href: '#about', label: 'About' },
-  { href: '#follow', label: 'Follow' },
+  { href: '#photos', label: 'Photos' },
+  { href: '#feeds', label: 'Feeds' },
   { href: '#credits', label: 'Credits' },
 ]
 
